@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Faal Anthony",
@@ -21,6 +22,7 @@
     "mysql": "^2.18.1",
     "nodemon": "^3.0.3",
     "path": "^0.12.7",
+    "pg": "^8.11.3",
     "vercel": "^33.2.0"
   }
 }
