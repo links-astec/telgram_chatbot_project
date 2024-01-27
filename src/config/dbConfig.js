@@ -1,11 +1,7 @@
 const { Client } = require('pg');
 
 const client = new Client({
-    host: "localhost",
-    user: "postgres",
-    port: 5432,
-    password: "Mex-skyxer2001",
-    database: "telegram_chat_bot" ,
+  connectionString: process.env.POSTGRES_URL + "?sslmode=require",
 
     client: {
         max: 5,
