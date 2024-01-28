@@ -19,6 +19,6 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api', authRoutes);
 app.use('/api/files', fileRoutes);
 
+const port = 5000;
 
-
-app.listen(process.env.PORT, () => console.log("Server is running on port 5000"))
+app.listen(process.env.PORT, () => console.log(`Server is running on port ${port}`))
