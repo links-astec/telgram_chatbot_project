@@ -1,26 +1,18 @@
-const { Client } = require('pg');
+const { Pool } = require('pg')
+require('dotenv').config();
 
-const client = new Client({
-  connectionString: process.env.POSTGRES_URL + "?sslmode=require",
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL_URL + "?sslmode=require",
+}) 
 
-    client: {
-        max: 5,
-        min: 0,
-        acquire: 30000,
-        idle: 10000
-      }
-});
-
-client.connect((err) => {
+pool.connect((err) => {
   if (err) {
-    console.error('Error connecting to the database:', err.message);
-    process.exit(1);
-  } else {
-
-    console.log('Connected to the database');
-  }
-});
+    console.error('Error connecting to PostgreSQL:', err.message);
+} else {
+    console.log("Connected to PostgreSQL successfully!");
+}
+})
 
 
 
-module.exports = client;   
+module.exports = pool
