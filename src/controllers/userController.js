@@ -34,7 +34,7 @@ async function loginUser(req, res) {
 // Function to query the database
 async function queryDatabase(username, password) {
   const query = {
-    text: 'SELECT * FROM users WHERE username = $1 AND password = $2',
+    text: 'SELECT * FROM users WHERE Username = $1 AND Password = $2',
     values: [username, password],
   };
 
